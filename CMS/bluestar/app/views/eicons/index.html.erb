@@ -1,0 +1,24 @@
+<h1>Listing Event Icons</h1>
+
+<table>
+  <tr>
+    <th>Icon</th>
+    <th>Icon file</th>
+    <th>Icon name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @eicons.each do |eicon| %>
+  <tr>
+    <td><%= eicon.icon_name %></td>
+    <td><%= link_to "View", eicon.icon_file  %></td>
+    <td><%= link_to 'Show', eicon %></td>
+    <td><%= link_to 'Edit', edit_eicon_path(eicon) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

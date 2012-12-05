@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @keynote.name %>
+</p>
+
+<p>
+  <b>Pdf:</b>
+  <%= link_to "View", @keynote.filename %>
+</p>
+
+<p>
+  <b>Event:</b>
+  <%= Event.find(@keynote.event_id).name %>
+</p>
+
+
+<%= link_to 'Edit', edit_keynote_path(@keynote) %> |
+<%= link_to 'Back', keynotes_path %>

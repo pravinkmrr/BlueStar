@@ -1,0 +1,35 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>New <%= @event.title %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :create %>">
+      <input type="hidden" name="id" value="<%= @event.object %>"/>
+
+      
+          <div data-role="fieldcontain">
+            <label for="event[filename]" class="fieldLabel">Filename</label>
+            <input type="text" id="event[filename]" name="event[filename]" <%= placeholder("Filename") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="event[logo]" class="fieldLabel">Logo</label>
+            <input type="text" id="event[logo]" name="event[logo]" <%= placeholder("Logo") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="event[name]" class="fieldLabel">Name</label>
+            <input type="text" id="event[name]" name="event[name]" <%= placeholder("Name") %> />
+          </div>
+      
+
+      <input type="submit" value="Create"/>
+    </form>
+  </div>
+
+</div>

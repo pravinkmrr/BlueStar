@@ -1,0 +1,27 @@
+<%= form_for(@icon,:html=>{:multipart =>true}) do |f| %>
+  <% if @icon.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@icon.errors.count, "error") %> prohibited this icon from being saved:</h2>
+
+      <ul>
+      <% @icon.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :icon_name %><br />
+    <%=  f.text_field :icon_name %>
+  </div>
+  <div class="field">
+    <%= f.label :icon_file %><br />
+    <%=  f.file_field :icon %>
+  </div>
+  
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

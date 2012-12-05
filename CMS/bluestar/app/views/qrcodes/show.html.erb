@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Link:</b>
+  <%= @qrcode.link %>
+</p>
+
+<p>
+  <b>App name:</b>
+  <%= @qrcode.app_name %>
+</p>
+
+<p>
+  <b>Device:</b>
+<% if @qrcode.device.to_s=="1" %>
+	BB
+	<% else %>
+	Windows
+	<% end %>
+</p>
+
+
+<%= link_to 'Edit', edit_qrcode_path(@qrcode) %> |
+<%= link_to 'Back', qrcodes_path %>

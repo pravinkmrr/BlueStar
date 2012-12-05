@@ -1,0 +1,30 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>New <%= @map.title %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :create %>">
+      <input type="hidden" name="id" value="<%= @map.object %>"/>
+
+      
+          <div data-role="fieldcontain">
+            <label for="map[name]" class="fieldLabel">Name</label>
+            <input type="text" id="map[name]" name="map[name]" <%= placeholder("Name") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="map[filename]" class="fieldLabel">Filename</label>
+            <input type="text" id="map[filename]" name="map[filename]" <%= placeholder("Filename") %> />
+          </div>
+      
+
+      <input type="submit" value="Create"/>
+    </form>
+  </div>
+
+</div>

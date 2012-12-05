@@ -1,0 +1,30 @@
+app_type: "rhoelements"
+motorola_license: "757A656A081D151A000307711A7E1C75"
+applog: "rholog.txt"
+symbian:
+  uid: "0xe70b4d84"
+version: "1.0"
+motorola_license_company: "MOTOROLA SOLUTIONS INC"
+android:
+  version: "2.3.3"
+  emulator: "v"
+name: "BlueStar"
+extensions:
+  - json
+  - Barcode
+iphone:
+  BundleURLScheme: "Blue Star"
+  sdk: "iphonesimulator5.0"
+  provisionprofile: "9646AA94-E329-42F3-92D1-0889CCD40B64"
+  BundleIdentifier: "com.bluestarinc.BlueStar"
+  entitlements: 
+  configuration: "Release"
+  codesignidentity: "iPhone Distribution: United Radio Incorporated"
+build: "release"
+bbver: "6.0"
+wp:
+  productid: "2090d3c0-f35c-012f-d9b3-406c8f15c72d"
+capabilities:
+  - calendar
+  - non_motorola_device
+sdk: "/Library/Ruby/Gems/1.8/gems/rhodes-3.3.3"

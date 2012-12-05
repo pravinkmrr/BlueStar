@@ -1,0 +1,23 @@
+<HTML>
+<HEAD>
+  <Meta http-equiv="scanner" content="aimType:presentation">
+  <Meta http-equiv="scanner" content="DecodeEvent:url('Javascript:doScan('%s');')">
+  <Meta http-equiv="scanner" content="enable">
+</HEAD>
+<BODY onLoad="doSoftScan();">
+  <SCRIPT LANGUAGE="JavaScript">
+
+    function doSoftScan()
+    {
+        scanner.start();
+    }
+
+    function doScan(jsonObject)
+    {
+        bcode.innerHTML = jsonObject.data;
+        doSoftScan();
+    }
+  </SCRIPT>
+  <div id="bcode"></div>
+</BODY>
+</HTML>

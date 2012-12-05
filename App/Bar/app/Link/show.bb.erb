@@ -1,0 +1,30 @@
+<div data-role="page" data-add-back-btn="true">
+
+  <div data-role="header" data-position="inline">
+    <%= link_to "Back", :action => :index %>
+    <h1><%= @link.links_url %></h1>
+    <%= link_to "Edit", :action => :edit, :id => @link.object %>
+  </div>
+
+  <div data-role="content">
+    <table>
+      
+      <tr>
+    	<td class="itemLabel">LinksUrl</td>
+        <td class="itemValue"><%= @link.links_url%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">RegionId</td>
+        <td class="itemValue"><%= @link.region_id%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">TypeId</td>
+        <td class="itemValue"><%= @link.type_id%></td>
+      </tr>
+      
+    </table>
+  </div>
+
+</div>

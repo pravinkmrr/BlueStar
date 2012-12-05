@@ -1,0 +1,27 @@
+<h1>Listing welcomes</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Pdf</th>
+    <th>Event</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @welcomes.each do |welcome| %>
+  <tr>
+    <td><%= welcome.name %></td>
+    <td><%= link_to "View", welcome.filename %></td>
+    <td><%= Event.find(welcome.event_id).name %></td>
+    <td><%= link_to 'Show', welcome %></td>
+    <td><%= link_to 'Edit', edit_welcome_path(welcome) %></td>
+    <td><%= link_to 'Destroy', welcome, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Welcome', new_welcome_path %>

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @venue.name %>
+</p>
+
+<p>
+  <b>Pdf:</b>
+  <%= link_to "View", @venue.filename %>
+</p>
+
+<p>
+  <b>Event:</b>
+  <%= Event.find(@venue.event_id).name %>
+</p>
+
+
+<%= link_to 'Edit', edit_venue_path(@venue) %> |
+<%= link_to 'Back', venues_path %>

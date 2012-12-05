@@ -1,0 +1,56 @@
+<div data-role="page" style="background:#333">
+
+  <div data-role="header" data-position="inline">
+    <h1>Events</h1>
+    <a  href="#" class="ui-btn-left" data-icon="back" data-rel='back'  data-direction="reverse" <%= "data-ajax='false'" if is_bb6 %>>
+      Back
+    </a>
+      <img src="/public/images/logo.png" class="ui-btn-right" />        
+  </div>
+     
+        <div data-role="header" data-position="inline">
+             <input type="search" >
+        </div>
+  <div data-role="content" class="bg home_content ">
+    <div class="grids events">
+    <% i = 0 %>
+    <% @events.each do |event|  %>
+      <% i+=1 %>
+      <% if i%3===1 %>      
+        <div class="ui-grid-b top">
+      <% end %>
+      <% if i%3===1 %>  
+            <div class="ui-block-a">
+                <a href="<%= url_for :controller =>:Eicon, :action => :index, :query=>{:id => event.object}  %>">
+                     <img class="home icon" src="<%= Rho::RhoApplication::get_blob_path(event.filename) %>" >
+                </a>
+           </div>
+    <% end %>
+    <% if i%3===2 %>    
+    <div class="ui-block-b">
+                   <a href="<%= url_for :controller =>:Eicon, :action => :index, :query=>{:id => event.object} %>">
+                        <img class="home icon" src="<%= Rho::RhoApplication::get_blob_path(event.filename) %>" >
+                   </a>
+              </div>
+        <% end %>
+        <% if i%3===0 %>    
+            <div class="ui-block-c">
+                           <a href="<%= url_for :controller =>:Eicon, :action => :index, :query=>{:id => event.object} %>">
+                                <img class="home icon" src="<%= Rho::RhoApplication::get_blob_path(event.filename) %>" >
+                           </a>
+                      </div>
+          <% end %>      
+      <% if i%3===0 %>      
+        </div>
+      <% end %>
+    <% end %>
+</div>
+    </div>
+<div class="ad">
+      <% if $ad_image!="" %>
+<a href="#" onclick="$.get('<%= url_for :controller =>:Link, :action => :open, :query=> {:link => $website_link} %>').success(function(data){console.log('PDF')}); return false;"> 
+      <img src="<%= Rho::RhoApplication::get_blob_path($ad_image) %>" />
+      </a>
+      <% end %>
+   </div>
+</div>

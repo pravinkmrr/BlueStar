@@ -1,0 +1,27 @@
+<h1>Listing agendas</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Pdf</th>
+    <th>Event</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @agendas.each do |agenda| %>
+  <tr>
+    <td><%= agenda.name %></td>
+    <td><%= link_to "View", agenda.filename %></td>
+    <td><%= Event.find(agenda.event_id).name %></td>
+    <td><%= link_to 'Show', agenda %></td>
+    <td><%= link_to 'Edit', edit_agenda_path(agenda) %></td>
+    <td><%= link_to 'Destroy', agenda, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Agenda', new_agenda_path %>

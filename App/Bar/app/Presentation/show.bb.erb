@@ -1,0 +1,34 @@
+<div data-role="page" data-add-back-btn="true">
+
+  <div data-role="header" data-position="inline">
+    <%= link_to "Back", :action => :index %>
+    <h1><%= #@presentation.name %></h1>
+    <%= link_to "Edit", :action => :edit, :id => @presentation.object %>
+  </div>
+
+  <div data-role="content">
+    <table>
+      
+      <tr>
+    	<td class="itemLabel">Name</td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Filename</td>
+        <td class="itemValue"><%= @presentation.filename%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">EventId</td>
+        <td class="itemValue"><%= @presentation.event_id%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">WorkshopId</td>
+        <td class="itemValue"><%= @presentation.workshop_id%></td>
+      </tr>
+      
+    </table>
+  </div>
+
+</div>

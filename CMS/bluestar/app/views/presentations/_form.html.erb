@@ -1,0 +1,33 @@
+<%= form_for(@presentation,:html=>{:multipart =>true}) do |f| %>
+  <% if @presentation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@presentation.errors.count, "error") %> prohibited this presentation from being saved:</h2>
+
+      <ul>
+      <% @presentation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :filename %><br />
+    <%= f.file_field :pdf %>
+  </div>
+  <div class="field">
+    <%= f.label :workshop %><br />
+    <%=  collection_select(:presentation, :workshop_id, Workshop.all, :id, :name)   %>
+  </div>
+  <div class="field">
+    <%= f.label :event %><br />
+    <%=  collection_select(:presentation, :event_id, Event.all, :id, :name)   %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,40 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>New <%= @calender.title %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :create %>">
+      <input type="hidden" name="id" value="<%= @calender.object %>"/>
+
+      
+          <div data-role="fieldcontain">
+            <label for="calender[title]" class="fieldLabel">Title</label>
+            <input type="text" id="calender[title]" name="calender[title]" <%= placeholder("Title") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="calender[message]" class="fieldLabel">Message</label>
+            <input type="text" id="calender[message]" name="calender[message]" <%= placeholder("Message") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="calender[date]" class="fieldLabel">Date</label>
+            <input type="text" id="calender[date]" name="calender[date]" <%= placeholder("Date") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="calender[time]" class="fieldLabel">Time</label>
+            <input type="text" id="calender[time]" name="calender[time]" <%= placeholder("Time") %> />
+          </div>
+      
+
+      <input type="submit" value="Create"/>
+    </form>
+  </div>
+
+</div>

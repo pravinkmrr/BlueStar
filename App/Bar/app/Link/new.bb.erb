@@ -1,0 +1,33 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <%= link_to "Back", :action => :index %>
+    <h1>New Link</h1>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :create %>">
+      <input type="hidden" name="id" value="<%= @link.object %>"/>
+      <table>
+          
+            <tr>
+                <td class="itemLabel">Links url: </td>
+                <td class="itemValue"><input type="text" name="link[links_url]"/></td>
+            </tr>
+          
+            <tr>
+                <td class="itemLabel">Region: </td>
+                <td class="itemValue"><input type="text" name="link[region_id]"/></td>
+            </tr>
+          
+            <tr>
+                <td class="itemLabel">Type: </td>
+                <td class="itemValue"><input type="text" name="link[type_id]"/></td>
+            </tr>
+          
+      </table>
+      <input type="submit" value="Create"/>
+    </form>
+  </div>
+
+</div>

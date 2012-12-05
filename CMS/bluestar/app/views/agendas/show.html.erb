@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @agenda.name %>
+</p>
+
+<p>
+  <b>Pdf:</b>
+  <%= link_to "View", @agenda.filename %>
+</p>
+
+<p>
+  <b>Event:</b>
+  <%= Event.find(@agenda.event_id).name %>
+</p>
+
+
+<%= link_to 'Edit', edit_agenda_path(@agenda) %> |
+<%= link_to 'Back', agendas_path %>

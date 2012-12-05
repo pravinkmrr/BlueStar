@@ -1,0 +1,27 @@
+<h1>Listing advertisements</h1>
+
+<table>
+  <tr>
+    <th>Image</th>
+    <th>Region</th>
+    <th>Link</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @advertisements.each do |advertisement| %>
+  <tr>
+    <td><%= link_to "View",advertisement.image %></td>
+    <td><%= Region.find(advertisement.event_id_id).region_name %></td>
+	<td><%= link_to "Link",advertisement.link %></td>
+    <td><%= link_to 'Show', advertisement %></td>
+    <td><%= link_to 'Edit', edit_advertisement_path(advertisement) %></td>
+    <td><%= link_to 'Destroy', advertisement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Advertisement', new_advertisement_path %>

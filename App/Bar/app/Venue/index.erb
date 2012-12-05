@@ -1,0 +1,28 @@
+<div data-role="page">
+
+	<div data-role="header" data-position="inline">
+    <h1>Venues</h1>
+<a href="#" data-rel="back" class="ui-btn-left" data-icon="back" data-direction="reverse" <%= "data-ajax='false'" if is_bb6 %>>
+  Back
+</a>
+<img class="ui-btn-right" src="<%= Rho::RhoApplication::get_blob_path($right_image) %>" />
+	</div>
+
+  <div data-role="header" data-position="inline">
+       <input type="search" >
+  </div>
+  <div data-role="content">
+    <ul data-role="listview">
+      <% @venues.each do |venue| %>
+      
+          <li>
+            <a href="#" onclick="$.get('<%= url_for :action => :show, :id => venue.object %>').success(function(data){console.log('PDF'); }); return false;">
+              <%= venue.name %>
+            </a>
+          </li>
+      
+      <% end %>
+    </ul>
+  </div>
+
+</div>

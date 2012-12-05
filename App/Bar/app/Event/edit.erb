@@ -1,0 +1,36 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>Edit <%= @event.filename %></h1>
+    <a href="<%= url_for :action => :show, :id => @event.object %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+    <a href="<%= url_for :action => :delete, :id => @event.object %>" class="ui-btn-right" data-icon="delete" data-direction="reverse">
+      Delete
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :update %>">
+      <input type="hidden" name="id" value="<%= @event.object %>"/>
+      
+          <div data-role="fieldcontain">
+            <label for="event[filename]" class="fieldLabel">Filename</label>
+            <input type="text" id="event[filename]" name="event[filename]" value="<%= @event.filename %>" <%= placeholder( "Filename" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="event[logo]" class="fieldLabel">Logo</label>
+            <input type="text" id="event[logo]" name="event[logo]" value="<%= @event.logo %>" <%= placeholder( "Logo" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="event[name]" class="fieldLabel">Name</label>
+            <input type="text" id="event[name]" name="event[name]" value="<%= @event.name %>" <%= placeholder( "Name" ) %> />
+          </div>
+      
+      <input type="submit" value="Update"/>
+    </form>
+  </div>
+
+</div>

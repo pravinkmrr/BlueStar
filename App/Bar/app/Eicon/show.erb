@@ -1,0 +1,34 @@
+<div data-role="page" data-add-back-btn="false">
+
+  <div data-role="header" data-position="inline">
+    <h1><%= @eicon.icon_file %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="arrow-l" data-direction="reverse">
+      Back
+    </a>
+    <a href="<%= url_for :action => :edit, :id => @eicon.object %>" class="ui-btn-right" data-icon="star">
+      Edit
+    </a>
+  </div>
+
+  <div data-role="content">
+    <ul data-role="listview">
+      
+          <li>
+            <div class="itemLabel">IconFile</div>
+            <div class="itemValue"><%= @eicon.icon_file %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Icon</div>
+            <div class="itemValue"><%= @eicon.icon %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">IconName</div>
+            <div class="itemValue"><%= @eicon.icon_name %></div>
+          </li>
+      
+    </ul>
+  </div>
+
+</div>

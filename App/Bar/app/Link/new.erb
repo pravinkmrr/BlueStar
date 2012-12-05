@@ -1,0 +1,35 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>New <%= @link.title %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :create %>">
+      <input type="hidden" name="id" value="<%= @link.object %>"/>
+
+      
+          <div data-role="fieldcontain">
+            <label for="link[links_url]" class="fieldLabel">Links url</label>
+            <input type="text" id="link[links_url]" name="link[links_url]" <%= placeholder("Links url") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="link[region_id]" class="fieldLabel">Region</label>
+            <input type="text" id="link[region_id]" name="link[region_id]" <%= placeholder("Region") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="link[type_id]" class="fieldLabel">Type</label>
+            <input type="text" id="link[type_id]" name="link[type_id]" <%= placeholder("Type") %> />
+          </div>
+      
+
+      <input type="submit" value="Create"/>
+    </form>
+  </div>
+
+</div>

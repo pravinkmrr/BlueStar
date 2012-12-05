@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @event.name %>
+</p>
+
+<p>
+  <b>Icon:</b>
+  <%= link_to "View", @event.filename %>
+</p>
+<p>
+  <b>Logo:</b>
+  <%= link_to "View", @event.right_filename %>
+</p>
+
+<p>
+  <b>Region:</b>
+  <%= Region.find(@event.region_id).region_name %>
+</p>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

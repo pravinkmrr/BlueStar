@@ -1,0 +1,31 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>Edit <%= @guide.name %></h1>
+    <a href="<%= url_for :action => :show, :id => @guide.object %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+    <a href="<%= url_for :action => :delete, :id => @guide.object %>" class="ui-btn-right" data-icon="delete" data-direction="reverse">
+      Delete
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :update %>">
+      <input type="hidden" name="id" value="<%= @guide.object %>"/>
+      
+          <div data-role="fieldcontain">
+            <label for="guide[name]" class="fieldLabel">Name</label>
+            <input type="text" id="guide[name]" name="guide[name]" value="<%= @guide.name %>" <%= placeholder( "Name" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="guide[filename]" class="fieldLabel">Filename</label>
+            <input type="text" id="guide[filename]" name="guide[filename]" value="<%= @guide.filename %>" <%= placeholder( "Filename" ) %> />
+          </div>
+      
+      <input type="submit" value="Update"/>
+    </form>
+  </div>
+
+</div>

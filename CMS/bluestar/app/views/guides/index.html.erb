@@ -1,0 +1,27 @@
+<h1>Listing guides</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Pdf</th>
+    <th>Event</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @guides.each do |guide| %>
+  <tr>
+    <td><%= guide.name %></td>
+    <td><%= link_to "View", guide.filename %></td>
+    <td><%= Event.find(guide.event_id).name %></td>
+    <td><%= link_to 'Show', guide %></td>
+    <td><%= link_to 'Edit', edit_guide_path(guide) %></td>
+    <td><%= link_to 'Destroy', guide, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Guide', new_guide_path %>

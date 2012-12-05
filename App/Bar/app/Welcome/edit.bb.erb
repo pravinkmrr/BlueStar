@@ -1,0 +1,29 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <%= link_to "Back", :action => :show, :id => @welcome.object %>
+    <h1>Edit <%= @welcome.name%></h1>
+    <%= link_to "Delete", :action => :delete, :id => @welcome.object %>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :update %>">
+      <input type="hidden" name="id" value="<%= @welcome.object %>"/>
+      <table>
+          
+          <tr>
+              <td class="itemLabel">Name: </td>
+              <td class="itemValue"><input type="text" name="welcome[name]" value="<%= @welcome.name %>"/></td>
+          </tr>
+          
+          <tr>
+              <td class="itemLabel">Filename: </td>
+              <td class="itemValue"><input type="text" name="welcome[filename]" value="<%= @welcome.filename %>"/></td>
+          </tr>
+          
+      </table>
+      <input type="submit" value="Update"/>
+    </form>
+  </div>
+
+</div>

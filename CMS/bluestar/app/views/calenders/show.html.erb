@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @calender.title %>
+</p>
+
+<p>
+  <b>Message:</b>
+  <%= @calender.message %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @calender.date %>
+</p>
+
+<p>
+  <b>Time:</b>
+  <%= @calender.time %>
+</p>
+
+<p>
+  <b>Event:</b>
+  <%= Event.find(@calender.event_id).name %>
+</p>
+
+
+<%= link_to 'Edit', edit_calender_path(@calender) %> |
+<%= link_to 'Back', calenders_path %>

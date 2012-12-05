@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Icon file:</b>
+  <%= link_to "View", @eicon.icon_file %>
+</p>
+
+<p>
+  <b>Icon name:</b>
+  <%= @eicon.icon_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_eicon_path(@eicon) %> |
+<%= link_to 'Back', eicons_path %>

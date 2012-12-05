@@ -1,0 +1,28 @@
+<div data-role="page">
+
+	<div data-role="header" data-position="inline">
+    <h1>Regions</h1>
+<a  href="#" class="ui-btn-left" data-icon="back" data-rel='back'  data-direction="reverse" <%= "data-ajax='false'" if is_bb6 %>>
+  Back
+</a>
+  <img src="/public/images/logo.png" class="ui-btn-right" />     
+	</div>
+ 
+    <div data-role="header" data-position="inline">
+         <input type="search" >
+    </div>
+  <div data-role="content">
+    <ul data-role="listview">
+      <% @regions.each do |region| %>
+        <% if region.object.to_s != "13" || region.object.to_s != "1" || region.object.to_s != "2" || region.object.to_s != "3" %>
+          <li>
+            <a href="/app/Icon/index/<%= region.object %>">
+              <%= region.region_name %>
+            </a>
+          </li>
+      <%end %>
+      <% end %>
+    </ul>
+  </div>
+
+</div>

@@ -1,0 +1,26 @@
+<h1>Listing regions</h1>
+
+<table>
+  <tr>
+    <th>Region name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% region_ids = [1,2,3,13]
+@regions.each do |region| %>
+  <tr>
+    <td><%= region.region_name %></td>
+    <td><%= link_to 'Show', region %></td>
+    <td><%= link_to 'Edit', edit_region_path(region) %></td>
+    <% unless region_ids.include?(region.id) %>
+    <td><%= link_to 'Destroy', region, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Region', new_region_path %>

@@ -1,0 +1,30 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>New <%= @exhibitor.title %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :create %>">
+      <input type="hidden" name="id" value="<%= @exhibitor.object %>"/>
+
+      
+          <div data-role="fieldcontain">
+            <label for="exhibitor[name]" class="fieldLabel">Name</label>
+            <input type="text" id="exhibitor[name]" name="exhibitor[name]" <%= placeholder("Name") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="exhibitor[filename]" class="fieldLabel">Filename</label>
+            <input type="text" id="exhibitor[filename]" name="exhibitor[filename]" <%= placeholder("Filename") %> />
+          </div>
+      
+
+      <input type="submit" value="Create"/>
+    </form>
+  </div>
+
+</div>

@@ -1,0 +1,36 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>Edit <%= @link.links_url %></h1>
+    <a href="<%= url_for :action => :show, :id => @link.object %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+    <a href="<%= url_for :action => :delete, :id => @link.object %>" class="ui-btn-right" data-icon="delete" data-direction="reverse">
+      Delete
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :update %>">
+      <input type="hidden" name="id" value="<%= @link.object %>"/>
+      
+          <div data-role="fieldcontain">
+            <label for="link[links_url]" class="fieldLabel">Links url</label>
+            <input type="text" id="link[links_url]" name="link[links_url]" value="<%= @link.links_url %>" <%= placeholder( "Links url" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="link[region_id]" class="fieldLabel">Region</label>
+            <input type="text" id="link[region_id]" name="link[region_id]" value="<%= @link.region_id %>" <%= placeholder( "Region" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="link[type_id]" class="fieldLabel">Type</label>
+            <input type="text" id="link[type_id]" name="link[type_id]" value="<%= @link.type_id %>" <%= placeholder( "Type" ) %> />
+          </div>
+      
+      <input type="submit" value="Update"/>
+    </form>
+  </div>
+
+</div>

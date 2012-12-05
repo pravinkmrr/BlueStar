@@ -1,0 +1,2 @@
+module EiconsHelper
+end

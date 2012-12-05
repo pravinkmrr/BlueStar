@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bluestar</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<%= link_to_unless_current("Events",{:controller => "events"}) %>
+	<%= link_to_unless_current("Welcome",{:controller => "welcomes"}) %>
+	<%= link_to_unless_current("Guide",{:controller => "guides"}) %>
+	<%= link_to_unless_current("Map",{:controller => "maps"}) %>
+	<%= link_to_unless_current("Agenda",{:controller => "agendas"}) %>
+	<%= link_to_unless_current("Keynote",{:controller => "keynotes"}) %>
+	<%= link_to_unless_current("Exhibitor",{:controller => "exhibitors"}) %>
+	<%= link_to_unless_current("Presentation",{:controller => "presentations"}) %>
+    <%= link_to_unless_current("Alerts",{:controller => "calenders"}) %>
+	<%= link_to_unless_current("Venues",{:controller => "venues"}) %>
+	<%= link_to_unless_current("Workshops",{:controller => "workshops"}) %>
+	<%= link_to_unless_current("Regions",{:controller => "regions"}) %>
+        <%= link_to_unless_current("Types",{:controller => "types"}) %>
+        <%= link_to_unless_current("Links",{:controller=> "links"}) %>
+        <%= link_to_unless_current("Icons",{:controller=> "icons"}) %>
+        <%= link_to_unless_current("Event Icons",{:controller=> "eicons"}) %>
+<%= link_to_unless_current("Advertisements",{:controller=> "advertisements"}) %>   
+	<%= link_to_unless_current("Qrcodes",{:controller=> "qrcodes"}) %>   
+<%= link_to_unless_current("logout", {:controller=> "sessions", :action=> "destroy"}, :method => :delete) %>
+<%= yield %>
+</body>
+</html>

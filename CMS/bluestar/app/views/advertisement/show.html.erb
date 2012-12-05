@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Image:</b>
+  <%= link_to "View", @advertisement.image %>
+</p>
+
+<p>
+  <b>Region:</b>
+  <%= Region.find(@advertisement.event_id_id).region_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_advertisement_path(@advertisement) %> |
+<%= link_to 'Back', advertisements_path %>
